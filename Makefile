@@ -25,8 +25,8 @@ vf48_tree_hdw.o::vf48_tree_hdw.cxx vf48_tree_hdw.h
 	$(CXX) $(OSFLAGS) $(CXXFLAGS) -c $<
 dict.o::dict.cc
 	$(CXX) $(OSFLAGS) $(CXXFLAGS) -c $<
-dict.cc::vf48TreeLinkDef.h
-	LD_LIBRARY_PATH=$(ROOTLIBPATH) rootcint dict.cc -c -p $<
+dict.cc::vf48_tree_hdw.h vf48TreeLinkDef.h
+	LD_LIBRARY_PATH=$(ROOTLIBPATH) rootcint dict.cc -c -p $^
 clean::
 	-rm -f *.o
 

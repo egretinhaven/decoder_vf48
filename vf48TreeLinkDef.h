@@ -3,4 +3,4 @@
 #pragma link C++ class vector<UInt_t>+;
 #pragma link C++ class vector<ULong64_t>;
 #pragma link C++ class CRTBase+;
-#pragma link C++ class CRTVF48+;
+#pragma link C++ class CRTRawCsI+;

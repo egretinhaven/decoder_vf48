@@ -22,7 +22,7 @@ class CRTBase: public TObject
   ClassDef(CRTBase,1);
 };
 
-class CRTVF48:public CRTBase
+class CRTRawCsI:public CRTBase
 {
  public:
   UInt_t runNo;
@@ -38,18 +38,18 @@ class CRTVF48:public CRTBase
   vector<ULong64_t> charge;
   vector<UInt_t> nSample;
   vector<vector<UShort_t> > data;  
-  CRTVF48();
-  virtual ~CRTVF48();
-  ClassDef(CRTVF48,1);
+  CRTRawCsI();
+  virtual ~CRTRawCsI();
+  ClassDef(CRTRawCsI,1);
 };
 class VF48TreeHdw{
  private:
   TTree *tree;
-  CRTVF48* pData;
+  CRTRawCsI* pData;
  public:
  VF48TreeHdw():tree(0){
     tree=new TTree("vf48_hdw","decoded vf48 adcs of hdw"); 
-    pData=new CRTVF48();
+    pData=new CRTRawCsI();
     pData->runNo=0;
     pData->eventNo=0;
     pData->isBad=1;
@@ -58,7 +58,7 @@ class VF48TreeHdw{
   }
  VF48TreeHdw(UInt_t run):tree(0){
     tree=new TTree("vf48_hdw","decoded vf48 adcs of hdw"); 
-    pData=new CRTVF48();
+    pData=new CRTRawCsI();
     pData->runNo=run;
     pData->eventNo=0;
     pData->isBad=1;

@@ -4,9 +4,9 @@ using namespace std;
 CRTBase::CRTBase() {};
 CRTBase::~CRTBase() {};
 ClassImp(CRTBase);
-CRTVF48::CRTVF48() {};
-CRTVF48::~CRTVF48() {};
-ClassImp(CRTVF48);
+CRTRawCsI::CRTRawCsI() {};
+CRTRawCsI::~CRTRawCsI() {};
+ClassImp(CRTRawCsI);
 
 void VF48TreeHdw::addChannel(const UInt_t& name, const UInt_t& index,const UInt_t& nmCsI, const UInt_t& iCsI,const ULong64_t& stamp, const UInt_t& time, const ULong64_t& chg,const vector<UShort_t>& adc){
   pData->nameModule.push_back(name);

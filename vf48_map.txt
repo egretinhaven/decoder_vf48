@@ -1,6 +1,28 @@
 //map of VF48 to CsI, format is like the following:
 //"run=0 100"  the valid run range of the following map, the first number is lower limit, and the second is the upper limit. 0 of upper limit means infinity
 //"34 2bu 1bd 1bu" 34 is the module name, the next 3 items are group of CsI. A number from 1 to 12 followed by either 'b' or 'f' and then 'u' or 'd'. The last number stands for the arrangement of the input.
+run=2837 0
+//vf48_1
+34 	1bu	1bd	2bu
+32 	2bd 	3bu 	3bd
+36 	1fu 	1fd 	2fu
+37 	2fd 	3fu 	3fd
+38 	4bu 	4bd 	5bu
+//vf48_2
+40 	5bd 	6bu 	6bd
+08 	4fu 	4fd 	5fu
+50 	5fd 	6fu 	6fd
+09	8bd	9bu	9bd
+
+//vf48_3
+54	7fu	7fd	8fu
+31	8fd	9fu	9fu
+04 	10bu	10bd	11bu
+45	11bd	12bu	12bd
+33	10fu	10fd	11fu
+39	11fd	12fu	12fd
+41      8bu     7bu	7bd
+
 run=1679 0
 //vf48_1
 34 	1bu	1bd	2bu

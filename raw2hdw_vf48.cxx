@@ -12,6 +12,7 @@ void raw2hdw(ifstream& inData,VF48TreeHdw* pTree,UInt_t runNo){
   UInt_t nElement=readMap(runNo);
   cout<<"got "<<nElement<<" elements"<<endl;
   if(nElement==0) return;
+  dumpTreasureMap();
   int total=0;
   bool beginVf48=false;
   while(inData.good()){

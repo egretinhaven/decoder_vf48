@@ -295,7 +295,7 @@ bool VF48Event::fillTree(VF48TreeHdw* tree){
 	    goodTree=false;
 	  }
 	  tree->addChannel(name,index,det.first,det.second,stamp,time,charge,pChannel->data());
-	  cout<<"adding "<<strName<<" "<<index<<" "<<strCsI<<" "<<det.second<<endl;
+	  //	  cout<<"adding "<<strName<<" "<<index<<" "<<strCsI<<" "<<det.second<<endl;
 
 	} 
       }

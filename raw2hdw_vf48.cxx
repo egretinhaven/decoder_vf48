@@ -38,7 +38,7 @@ void raw2hdw(ifstream& inData,VF48TreeHdw* pTree,UInt_t runNo){
 	  beginVf48=false;
 	  VF48Event thisEvent(runNo);
 	  thisEvent.decode(buff,total);
-	  thisEvent.print();
+	  //	  thisEvent.print();
 	  thisEvent.fillTree(pTree);
 	  /*
 	    if(!thisEvent.fillTree(pTree)){

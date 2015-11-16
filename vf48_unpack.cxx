@@ -283,12 +283,20 @@ bool VF48Event::fillTree(VF48TreeHdw* tree){
 	UInt_t index=iGroup*8+iChannel;
 	pairVf48 hdw(name,index);
 	pairCsI det=TreasureMap[hdw];
+	char strName[5];
+	memcpy((void*)strName,(const void*)&name,4);
+	strName[4]='\0';
+	char strCsI[5];
+	memcpy((void*)strCsI,(const void*)&det.first,4);
+	strCsI[4]='\0';
 	if(nSample>0){
 	  if(nSample<200 && isBad==1){
 	    //	    cout<<"Warning:number of sample of channel "<<iChannel<<" in group "<<iGroup<<" of module "<<hex<<name<<dec<<" is "<<nSample<<endl;
 	    goodTree=false;
 	  }
 	  tree->addChannel(name,index,det.first,det.second,stamp,time,charge,pChannel->data());
+	  cout<<"adding "<<strName<<" "<<index<<" "<<strCsI<<" "<<det.second<<endl;
+
 	} 
       }
     }

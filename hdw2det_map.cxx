@@ -13,6 +13,7 @@ void dumpTreasureMap(){
 }
 
 UInt_t readMap(UInt_t run){
+
   ifstream inMap(NameMap);
   if(!inMap.good()){
     cerr<<"Error opening map file:"<<NameMap<<endl;
@@ -25,6 +26,7 @@ UInt_t readMap(UInt_t run){
     getline(inMap,buff);
     if(!inMap.good()) break;
     if(buff.size()==0) continue;
+
     if(!findRange){//search for keyword run
       if(strcmp(buff.substr(0,3).c_str(),"run")==0){
         auto pos=buff.find("=");
@@ -33,7 +35,7 @@ UInt_t readMap(UInt_t run){
           par>>lowRun>>highRun;
           if(run>=lowRun && (run<=highRun || highRun==0)){
             findRange=true;
-            
+
           }
         }
       }
@@ -47,6 +49,7 @@ UInt_t readMap(UInt_t run){
 
       line>>nameModule>>nameG[0]>>nameG[1]>>nameG[2];
       nameModule=0x30304b54+((nameModule/10)<<16)+((nameModule%10)<<24);
+
       for(int iG=0;iG<3;iG++){
 	if(nameG[iG].size()==3){
 	  name[iG]=0x30000000+(nameG[iG][0]<<16)+(nameG[iG][1]<<8)+nameG[iG][2];
@@ -60,6 +63,9 @@ UInt_t readMap(UInt_t run){
           TreasureMap[hdw]=det;
         }
       }
+    }
+    else if(strcmp(buff.substr(0,3).c_str(),"run")==0){
+      break;
     }
   }
   return TreasureMap.size();

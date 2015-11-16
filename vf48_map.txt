@@ -22,8 +22,7 @@ run=2837 0
 33	10fu	10fd	11fu
 39	11fd	12fu	12fd
 41      8bu     7bu	7bd
-
-run=1679 0
+run=1679 2836
 //vf48_1
 34 	1bu	1bd	2bu
 32 	2bd 	3bu 	3bd
@@ -44,7 +43,9 @@ run=1679 0
 33	10fu	10fd	11fu
 39	11fd	12fu	12fd
 93      8bu     7bu	7bd
-run=0 0
+
+
+run=0 1678
 //vf48_1
 34 	1bu	1bd	2bu
 32 	2bd 	3bu 	3bd

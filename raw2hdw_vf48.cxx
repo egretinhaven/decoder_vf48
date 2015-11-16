@@ -10,9 +10,11 @@ void raw2hdw(ifstream& inData,VF48TreeHdw* pTree,UInt_t runNo){
   auto timeBegin=time(0);
   cout<<"Reading map for run "<<runNo<<":";
   UInt_t nElement=readMap(runNo);
-  cout<<"got "<<nElement<<" elements"<<endl;
   if(nElement==0) return;
-  dumpTreasureMap();
+  if(nElement!=768){
+    cout<<"The number read from the map file is incorrect. It should be 768 and the actual number is "<<nElement<<endl;
+    exit(-1);
+  }
   int total=0;
   bool beginVf48=false;
   while(inData.good()){
@@ -36,6 +38,7 @@ void raw2hdw(ifstream& inData,VF48TreeHdw* pTree,UInt_t runNo){
 	  beginVf48=false;
 	  VF48Event thisEvent(runNo);
 	  thisEvent.decode(buff,total);
+	  thisEvent.print();
 	  thisEvent.fillTree(pTree);
 	  /*
 	    if(!thisEvent.fillTree(pTree)){

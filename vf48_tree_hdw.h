@@ -85,6 +85,15 @@ class VF48TreeHdw{
     tree->Fill();
   }
   void reset(){
+    pData->nameModule.clear();
+    pData->indexChannel.clear();
+    pData->nameCsI.clear();
+    pData->indexCsI.clear();
+    pData->timeStamp.clear();
+    pData->timeCFD.clear();
+    pData->charge.clear();
+    pData->nSample.clear();
+
     pData->data.clear();
     pData->nChannel=0;
     pData->eventNo=0;

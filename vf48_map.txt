@@ -16,7 +16,7 @@ run=2837 0
 
 //vf48_3
 54	7fu	7fd	8fu
-31	8fd	9fu	9fu
+31	8fd	9fu	9fd
 04 	10bu	10bd	11bu
 45	11bd	12bu	12bd
 33	10fu	10fd	11fu
@@ -37,7 +37,7 @@ run=1679 2836
 
 //vf48_3
 54	7fu	7fd	8fu
-31	8fd	9fu	9fu
+31	8fd	9fu	9fd
 04 	10bu	10bd	11bu
 45	11bd	12bu	12bd
 33	10fu	10fd	11fu
@@ -60,7 +60,7 @@ run=0 1678
 09	8bd	9bu	9bd
 54	7fu	7fd	8fu
 //vf48_3
-31	8fd	9fu	9fu
+31	8fd	9fu	9fd
 04 	10bu	10bd	11bu
 45	11bd	12bu	12bd
 33	10fu	10fd	11fu

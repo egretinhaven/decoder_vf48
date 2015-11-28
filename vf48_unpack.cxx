@@ -133,7 +133,7 @@ int VF48Event::decode(UInt_t* buffer,UInt_t sizeBuffer){
 	  cout<<dec;
 	}
 	else{
-	  cout<<"event slipping"<<endl;
+	  //	  cout<<"event slipping"<<endl;
 	  setBad();
 	}
 	break;
@@ -250,14 +250,16 @@ int VF48Event::decode(UInt_t* buffer,UInt_t sizeBuffer){
 	  }//c2
 	}//c1
 	ULong64_t charge=c0+(c1<<24)+(c2<<48);
-	pChannel->setCharge(charge);
+	if(pChannel!=0)
+	  pChannel->setCharge(charge);
 	break;
       }
     case 0x40000000://cfd time
       {
 	//	cout<<":time"<<endl;
 	UInt_t t =buffer[iBuffer]& 0x00FFFFFF;
-	pChannel->setTime(t);
+	if(pChannel!=0)
+	  pChannel->setTime(t);
 	break;
       }
     }//end of switch
@@ -303,7 +305,7 @@ bool VF48Event::fillTree(VF48TreeHdw* tree){
   }
   if(isBad==-1){
     tree->setBad();
-    cout<<"filling slipped event "<<tree->badBit()<<endl;
+    cout<<"filling slipped event with bit "<<tree->badBit()<<endl;
   }
   tree->fill();
   return goodTree;
